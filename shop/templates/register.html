@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+    {% endblock %}
+
+
+{% block content %}
+<h1>register page</h1>
+{% if er %}
+<div class="alert alert-danger fn" role="alert">
+{{er}}
+</div>
+{% endif %}
+
+<form  class="fn" action="/register/" method="post">
+    {% csrf_token %}
+    <input type="text" name="uname" id="" placeholder="username" class="form-control x">
+    <input type="text" name="fname" id="" placeholder="first name" class="form-control x">
+    <input type="text" name="lname" id="" placeholder="last name" class="form-control x">
+    <input type="email" name="em" placeholder="email" class="form-control x">
+    <input type="password" name="p" placeholder="password" class="form-control x">
+    <input type="password" name="ps" placeholder="confirm password" class="form-control x">
+    <input type="submit" name="" id="" value="register" class="form-control x btn-primary">
+</form>
+    {% endblock %}

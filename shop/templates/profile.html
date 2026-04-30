@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- {% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %} -->
+
+{% block content %}
+
+<div class="fn" style="max-width:600px; margin:40px auto; padding:20px;">
+    <h1>{{ user.username }}'s Profile</h1>
+
+  {% if profile.image %}
+    <img src="{{ profile.image.url }}">
+{% endif %}
+
+    <p><strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    {% if profile.phone %}
+        <p><strong>Phone:</strong> {{ profile.phone }}</p>
+    {% endif %}
+<a href="/editprofile" class="btn-btn-info" >edit profile</a>
+    <hr>
+    <h2>My Products</h2>
+
+    {% if products %}
+        {% for p in products %}
+            <div style="margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #ccc;">
+                {% if p.img1 %}
+                    <img src="{{ p.img1.url }}" width="150px" style="margin-right:10px;">
+                {% endif %}
+                <h3>{{ p.name }}</h3>
+                <p><strong>Price:</strong> {{ p.price }}</p>
+                <p>{{ p.desc }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No products added by you.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

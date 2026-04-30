@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+    {% endblock %}
+
+
+{% block content %}
+<h1>editproduct</h1>
+
+
+<form class="fn"  method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{fm}}
+  
+    <button type="submit"  class="form-control x btn-primary">submit</button>
+</form>
+
+    {% endblock %}

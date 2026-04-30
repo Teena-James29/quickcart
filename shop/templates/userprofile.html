@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+    {% endblock %}
+
+
+{% block content %}
+
+<img src="/media/{{us.pro.image}}"  width="200px" alt="">
+<h1>user</h1>
+<h1>{{us}}</h1>
+<h1>{{us.email}}</h1>
+<h1>{{us.first_name}}  {{us.last_name}}</h1>
+
+<hr>
+
+{% for p in pro %}
+    <div style="margin-bottom:20px;">
+        
+        
+         <img src=" /media/{{p.img1}}" width="200px">
+       
+
+        <h3>{{ p.name }}</h3>
+        <p>Price: {{ p.price }}</p>
+        <p>{{ p.desc }}</p>
+        <p>Added by: {{ p.us.username }} </p> 
+
+    </div>
+    <hr>
+{% empty %}
+    <p>No products added by you.</p>
+{% endfor %}
+
+
+    {% endblock %}

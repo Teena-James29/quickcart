@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1 style="text-align: center;">View Page</h1>
+
+<h2 style="text-align: center;">{{ pro.name }}</h2>
+
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="/media/{{ pro.img1 }}" alt="" width="200px" style="margin: 10px;">
+    <img src="/media/{{ pro.img2 }}" alt="" width="200px" style="margin: 10px;">
+    <img src="/media/{{ pro.img3 }}" alt="" width="200px" style="margin: 10px;">
+</div>
+
+<h3 style="text-align: center;">Price: {{ pro.price }}</h3>
+
+<p style="text-align: center; max-width: 600px; margin: 20px auto;">{{ pro.desc }}</p>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+
+    <div class="card shadow-lg p-4 text-center" style="max-width: 500px; width: 100%; border-radius: 15px;">
+
+        
+        <div class="mb-3">
+            <h1 style="font-size: 60px;">✅</h1>
+        </div>
+
+        
+        <h2 class="mb-3 text-success">Order Placed Successfully!</h2>
+
+        
+        <p class="mb-1"><strong>Order ID:</strong> #{{ order.id }}</p>
+        <p class="mb-3"><strong>Total Amount:</strong> ₹ {{ order.total_amount }}</p>
+
+        <hr>
+
+        
+        <div class="d-flex justify-content-center gap-3 mt-3">
+
+            <a href="/" class="btn btn-outline-primary px-4 rounded-pill">
+                🏠 Home
+            </a>
+
+            <a href="/cart/" class="btn btn-outline-secondary px-4 rounded-pill">
+                🛒 Cart
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

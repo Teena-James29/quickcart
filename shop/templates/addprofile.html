@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+    {% endblock %}
+
+
+{% block content %}
+<h1>addprofile</h1>
+
+
+<form class="fn"  method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{fm}}
+  
+    <button type="submit" value="log in" class="form-control x btn-primary">login</button>
+</form>
+
+    {% endblock %}

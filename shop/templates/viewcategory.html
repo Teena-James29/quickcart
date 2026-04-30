@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/view.css' %}">
+    {% endblock %}
+
+{% block content %}
+
+<div class="main">
+    {% for i in pro %}
+    <div class="card" style="width: 18rem;">
+        {% if i.img1 %}
+            <img class="card-img-top" src="/media/{{ i.img1 }}" alt="">
+        {% endif %}
+        <div class="card-body">
+            <h2 class="card-title">{{ i.name }}</h2>
+            <h5 class="card-text">{{ i.price }}</h5>
+            <h5 class="card-text">{{ i.desc }}</h5>
+           <a href="/viewcategory/{{i.id}}/" class="btn btn-primary">view</a>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    {% endblock %}
